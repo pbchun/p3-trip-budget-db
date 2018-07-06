@@ -3,15 +3,18 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
-const port = parseInt(process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
 
-const tripBudget = require("./routes/tripBudget");
+const mytrips = require("./routes/mytrips");
+const futuretrips = require("./routes/futuretrips");
 
 app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 
-app.use("/tripBudget", tripBudget);
+app.use("/mytrips", mytrips);
+app.use("/futuretrips", futuretrips);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

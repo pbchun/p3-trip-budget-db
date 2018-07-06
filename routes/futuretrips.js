@@ -1,25 +1,26 @@
 const express = require('express');
 const router = express.Router();
 
-const queries = require('../queries');
+const queries = require('../queries/futuretripsqueries.js');
+
 
 router.get("/", (request, response, next) => {
-    queries.list().then(mytrips => {
-        response.json({mytrips});
+    queries.list().then(futuretrips => {
+        response.json({futuretrips});
     }).catch(next);
 });
 
 router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(mytrips => {
-        mytrips
-            ? response.json({mytrips})
+    queries.read(request.params.id).then(futuretrips => {
+        futuretrips
+            ? response.json({futuretrips})
             : response.status(404).json({message: 'Not found'})
     }).catch(next);
 });
 
 router.post("/", (request, response, next) => {
-    queries.create(request.body).then(mytrips => {
-        response.status(201).json({mytrips: mytrips});
+    queries.create(request.body).then(futuretrips => {
+        response.status(201).json({futuretrips: futuretrips});
     }).catch(next);
 });
 
@@ -30,8 +31,8 @@ router.delete("/:id", (request, response, next) => {
 });
 
 router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(mytrips => {
-        response.json({mytrips: mytrips[0]});
+    queries.update(request.params.id, request.body).then(futuretrips => {
+        response.json({futuretrips: futuretrips[0]});
     }).catch(next);
 });
 

@@ -2,30 +2,30 @@ const database = require("./database-connection");
 
 module.exports = {
   list() {
-    return database("tripBudget").select();
+    return database("mytrips").select();
   },
   read(id) {
-    return database("tripBudget")
+    return database("mytrips")
       .select()
       .where("id", id)
       .first();
   },
-  create(tripBudget) {
-    return database("tripBudget")
+  create(mytrips) {
+    return database("mytrips")
       .select()
-      .insert(tripBudget)
+      .insert(mytrips)
       .returning("*")
       .then(record => record[0]);
   },
-  update(id, tripBudget) {
-    return database("tripBudget")
-      .update(tripBudget)
+  update(id, mytrips) {
+    return database("mytrips")
+      .update(mytrips)
       .where("id", id)
       .returning("*")
       .then(record => record[0]);
   },
   delete(id) {
-    return database("tripBudget")
+    return database("mytrips")
       .delete()
       .where("id", id);
   }
