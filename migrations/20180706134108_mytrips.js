@@ -4,9 +4,9 @@ exports.up = function(knex, Promise) {
     mytrips.text('destination')
     mytrips.date('startTravelDate')
     mytrips.date('endTravelDate')
-    mytrips.string('totalExpectedBudget')
-    mytrips.string('amountSaved')
-    mytrips.string('amountToSave')
+    mytrips.integer('totalExpectedBudget')
+    mytrips.integer('amountSaved')
+    mytrips.integer('amountToSave')
 })
 };
 
