@@ -8,16 +8,16 @@ exports.seed = function(knex, Promise) {
           startTravelDate: '2018-08-14',
           endTravelDate: '2018-08-16',
           totalExpectedBudget: 600.00,
-          amountSaved: 200.00,
-          amountToSave: 400.00
+          amountSaved: 500.00,
+          amountToSave: 100.00
         }, {
           id: 2, 
           destination: 'Las Vegas, NV',
           startTravelDate: '2018-10-12',
           endTravelDate: '2018-10-14',
           totalExpectedBudget: 700.00,
-          amountSaved: 100.00,
-          amountToSave: 600.00
+          amountSaved: 300.00,
+          amountToSave: 400.00
         }, {
           id: 3, 
           destination: 'Los Angeles, CA',

@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
           destination: 'Tokyo, Japan',
         }, {
           id: 3, 
-          destination: 'Athens, Greece',
+          destination: 'Santorini, Greece',
         }
       ])
       .then(() => {
